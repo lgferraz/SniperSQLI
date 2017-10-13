@@ -39,21 +39,22 @@ def testar(site, dork):
         font = str(respi.read())
         for erro in erros:                                   
             if erro in font:
-                sites_falhos.append(site)
-                print('''
-                   |_)=A=0=A=(_|
-    A____________ _____H___H___o    _____
-   O____________<^       ====__~`\_/    /`~~|
-                 `\_________(_)>.  ___--'   |
-                                 \/   `-----'
-___________________________________________________
-##################Possivel Falha###################
-%s
-                ''' % (site))
-            else:
-                pass
+                if site not in sites_falhos:
+                    sites_falhos.append(site)
+                    print('''
+                    |_)=A=0=A=(_|
+        A____________ _____H___H___o    _____
+    O____________<^       ====__~`\_/    /`~~|
+                    `\_________(_)>.  ___--'   |
+                                    \/   `-----'
+    ___________________________________________________
+    ##################Possivel Falha###################
+    %s
+                    ''' % (site))
+                else:
+                    pass
     except Exception as b:
-        pass                
+        pass              
 def buscar(dork):
     print("Buscando...")
     for i in range(0,1000000,10):
