@@ -54,7 +54,7 @@ def testar(site, dork):
                 else:
                     pass
     except Exception as b:
-        pass              
+        pass                
 def buscar(dork):
     print("Buscando...")
     for i in range(0,1000000,10):
